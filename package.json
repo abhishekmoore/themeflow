@@ -1,0 +1,24 @@
+{
+  "name": "themeflow",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Feedback themes. Paste several feedback lines and cluster them into 3–6 themes with quotes and a product action. TypeScript MERN app with an OpenAI-compatible model.",
+  "workspaces": [
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "dev": "concurrently -n server,client -c blue,green \"npm run dev -w server\" \"npm run dev -w client\"",
+    "build": "npm run build -w server && npm run build -w client",
+    "typecheck": "npm run typecheck -w server && npm run typecheck -w client",
+    "test": "npm run test -w server",
+    "start": "npm run start -w server"
+  },
+  "devDependencies": {
+    "concurrently": "^9.1.2"
+  },
+  "engines": {
+    "node": ">=20"
+  },
+  "license": "MIT"
+}
